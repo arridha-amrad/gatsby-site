@@ -3,9 +3,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const AboutPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>About Page</h1>
+  <Layout pageTitle="About Us">
+    <SEO title="About" keywords={[`gatsby`, `react`, `application`]} />
   </Layout>
 )
 
