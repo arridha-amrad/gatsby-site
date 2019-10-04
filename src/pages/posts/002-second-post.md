@@ -1,12 +1,11 @@
 ---
-title: 'Second post - JS'
-date: "2019-09-26T08:19:07.250Z"
-author: 'Arridha'
+title: 'Second Post - HTML'
+date: 2018-12-02 07:00:00
+author: 'Kimberly Jane'
 image: ../../images/javascript.jpg
-tags: 
-- code
-- JS
-- tutorial
+tags:
+  - code
+  - design
 ---
 
-This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. This time we gonna dive into JS. 
+Today, we are gonna learn about HTML5, Today, we are gonna learn about HTML5, Today, we are gonna learn about HTML5, Today, we are gonna learn about HTML5, Today, we are gonna learn about HTML5, Today, we are gonna learn about HTML5, Today, we are gonna learn about HTML5.

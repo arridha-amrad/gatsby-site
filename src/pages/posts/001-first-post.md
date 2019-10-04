@@ -1,12 +1,10 @@
 ---
-title: 'First post - HTML'
-date: "2019-09-26T08:19:07.250Z"
-author: 'Arridha'
+title: 'First Post - Introduction'
+date: 2018-12-01 07:00:00
+author: 'Kimberly Jane'
 image: ../../images/javascript.jpg
-tags: 
-- programming
-- html
-- basic
+tags:
+  - code
 ---
 
-This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. This time we gonna dive into HTML. 
+Welcome to Code Blog, I hope you enjoy the content, Welcome to Code Blog, I hope you enjoy the content, Welcome to Code Blog, I hope you enjoy the content, Welcome to Code Blog, I hope you enjoy the content, Welcome to Code Blog, I hope you enjoy the content.

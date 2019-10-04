@@ -1,12 +1,10 @@
 ---
-title: 'Third post - CSS'
-date: "2019-09-26T08:19:07.250Z"
-author: 'Arridha'
+title: 'Fourth Post - CSS'
+date: 2018-12-04 07:00:00
+author: 'Mola Kagney'
 image: ../../images/javascript.jpg
-tags: 
-- code
-- programming
-- design
+tags:
+  - tutorial
 ---
 
-This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. This time we gonna dive into CSS. 
+New post on Netlify

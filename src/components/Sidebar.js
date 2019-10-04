@@ -1,10 +1,83 @@
 import React from "react"
-import { Card, CardTitle, CardBody, Form, FormGroup, Input } from "reactstrap"
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardText,
+  Form,
+  FormGroup,
+  Input,
+} from "reactstrap"
 import { graphql, StaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
+import facebook from "../icons/facebook.svg"
+import github from "../icons/github.svg"
+import instagram from "../icons/instagram.svg"
+import twitter from "../icons/twitter.svg"
+import linkedin from "../icons/linkedin.svg"
 
-const Sidebar = () => (
+const Sidebar = ({ authorFluid, author }) => (
   <div>
+    {author && (
+      <Card>
+        <Img className="card-image-top" fluid={authorFluid} />
+        <CardBody>
+          <CardTitle className="text-center text-uppercase mb-3">
+            {author.name}
+          </CardTitle>
+          <CardText>{author.bio}</CardText>
+          <div className="author-social-links text-center">
+            <ul>
+              <li>
+                <a
+                  href={author.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={facebook} width="30px" alt="facebook" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={author.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={twitter} width="30px" alt="twitter" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={author.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={github} width="30px" alt="github" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={author.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={instagram} width="30px" alt="instagram" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={author.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={linkedin} width="30px" alt="linkedin" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </CardBody>
+      </Card>
+    )}
     <Card>
       <CardBody>
         <CardTitle className="text-center text-uppercase mb-3">

@@ -1,12 +1,7 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
-// You can delete this file if you're not using it
 const { slugify } = require("./src/util/utilityFunctions")
 const path = require("path")
+const authors = require("./src/util/authors.js")
+
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === "MarkdownRemark") {
@@ -48,6 +43,9 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           // Passing slug for templates to use to get post
           slug: node.fields.slug,
+          // find author imageurl from authors.js and pass it to single post template
+          imageUrl: authors.find(x => x.name === node.frontmatter.author)
+            .imageUrl,
         },
       })
     })
