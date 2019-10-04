@@ -1,16 +1,23 @@
 import React from "react"
 import Layout from "../components/layout"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import { Card, CardBody, CardSubtitle, Badge } from "reactstrap"
 import { slugify } from "../util/utilityFunctions"
 import Img from "gatsby-image"
 import authors from "../util/authors"
+import { DiscussionEmbed } from "disqus-react"
 
 const SinglePost = ({ data, pageContext }) => {
   const post = data.markdownRemark.frontmatter
   const author = authors.find(x => x.name === post.author)
-  const baseUrl = "https://www.gatsby.co.id"
+  const baseUrl = "https://www.gatsby.co.id/"
+  const disqusShortname = "https-gatsbytutorial-co-uk"
+  const disqusConfig = {
+    identifier: data.markdownRemark.id,
+    title: data.markdownRemark.frontmatter.title,
+    url: baseUrl + pageContext.slug,
+  }
   return (
     <Layout
       pageTitle={post.title}
@@ -32,11 +39,11 @@ const SinglePost = ({ data, pageContext }) => {
           <ul className="post-tags">
             {post.tags.map(tag => (
               <li key={tag}>
-                <Link to={`/tag/${slugify(tag)}`}>
+                <a href={`/tag/${slugify(tag)}`}>
                   <h5>
                     <Badge color="primary">{tag}</Badge>
                   </h5>
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
@@ -107,6 +114,7 @@ const SinglePost = ({ data, pageContext }) => {
           </li>
         </ul>
       </div>
+      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
     </Layout>
   )
 }

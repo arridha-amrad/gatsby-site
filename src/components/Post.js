@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import {
   Card,
   CardText,
@@ -14,9 +14,9 @@ import { slugify } from "../util/utilityFunctions"
 const Post = ({ title, author, slug, date, body, fluid, tags }) => {
   return (
     <Card>
-      <Link to={slug}>
+      <a href={slug}>
         <Img className="card-image-top" fluid={fluid} />
-      </Link>
+      </a>
       <CardBody>
         <CardTitle>{title}</CardTitle>
         <CardSubtitle>
@@ -27,17 +27,17 @@ const Post = ({ title, author, slug, date, body, fluid, tags }) => {
         <ul className="post-tags">
           {tags.map(tag => (
             <li key={tag}>
-              <Link to={`/tag/${slugify(tag)}`}>
+              <a href={`/tag/${slugify(tag)}`}>
                 <h5>
                   <Badge color="primary">{tag}</Badge>
                 </h5>
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
-        <Link to={slug} className="btn btn-primary float-right">
+        <a href={slug} className="btn btn-primary float-right">
           Read more
-        </Link>
+        </a>
       </CardBody>
     </Card>
   )
