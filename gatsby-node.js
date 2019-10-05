@@ -21,6 +21,7 @@ exports.createPages = ({ actions, graphql }) => {
   const templates = {
     singlePostTemplate: path.resolve("src/templates/single-post.js"),
     tagsPage: path.resolve("src/templates/tags-page.js"),
+    tag: path.resolve("src/templates/tag-posts.js"),
   }
   return graphql(`
     {
@@ -55,7 +56,7 @@ exports.createPages = ({ actions, graphql }) => {
         },
       })
     })
-    // start creating tags-page
+    // start creating tags-page & tag-post
     let tags = []
     // get all tags
     _.each(posts, edge => {
@@ -80,6 +81,16 @@ exports.createPages = ({ actions, graphql }) => {
         tags,
         tagPostCounts,
       },
+    })
+    // tag post
+    tags.forEach(tag => {
+      createPage({
+        path: `/tag/${slugify(tag)}`,
+        component: templates.tag,
+        context: {
+          tag
+        }
+      })
     })
   })
 }

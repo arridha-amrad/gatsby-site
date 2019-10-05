@@ -10,13 +10,13 @@ import {
 import React from "react"
 import Img from "gatsby-image"
 import { slugify } from "../util/utilityFunctions"
-
+import {Link} from "gatsby"
 const Post = ({ title, author, slug, date, body, fluid, tags }) => {
   return (
     <Card>
-      <a href={slug}>
+      <Link to={slug}>
         <Img className="card-image-top" fluid={fluid} />
-      </a>
+      </Link>
       <CardBody>
         <CardTitle>{title}</CardTitle>
         <CardSubtitle>
@@ -35,9 +35,9 @@ const Post = ({ title, author, slug, date, body, fluid, tags }) => {
             </li>
           ))}
         </ul>
-        <a href={slug} className="btn btn-primary float-right">
+        <Link to={slug} className="btn btn-primary float-right">
           Read more
-        </a>
+        </Link>
       </CardBody>
     </Card>
   )

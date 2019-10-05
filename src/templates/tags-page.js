@@ -18,7 +18,7 @@ const TagsPage = ({ pageContext }) => {
               href={`/tag/${slugify(tag)}`}
             >
               {tag}
-              <Badge color="light">{tagPostCounts[tag]}</Badge>
+              <Badge color="light" style={{marginLeft: 10}}>{tagPostCounts[tag]}</Badge>
             </Button>
           </li>
         ))}
