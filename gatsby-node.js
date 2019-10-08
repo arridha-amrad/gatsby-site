@@ -23,6 +23,7 @@ exports.createPages = ({ actions, graphql }) => {
     tagsPage: path.resolve("src/templates/tags-page.js"),
     tag: path.resolve("src/templates/tag-posts.js"),
     postList: path.resolve("src/templates/post-list.js"),
+    authorPosts: path.resolve("src/templates/author-posts.js"),
   }
   return graphql(`
     {
@@ -89,30 +90,41 @@ exports.createPages = ({ actions, graphql }) => {
         path: `/tag/${slugify(tag)}`,
         component: templates.tag,
         context: {
-          tag
-        }
+          tag,
+        },
       })
-//===================================================================
-    // post list / pagination
-    const postsPerPage = 2;
-    const numberOfPages = Math.ceil(posts.length / postsPerPage);
-    Array.from({length: numberOfPages}).forEach((_, index) => {
-      const isFirstPage = index === 0;
-      const currentPage = index + 1;
-      // skip firstPage because of index.js
-      if(isFirstPage) return 
-      createPage({
-        path: `/page/${currentPage}`,
-        component: templates.postList,
-        context: {
-          limit: postsPerPage,
-          skip: index * postsPerPage,
-          currentPage: currentPage,
-          numberOfPages: numberOfPages
-        }
+      //===================================================================
+      // post list / pagination
+      const postsPerPage = 2
+      const numberOfPages = Math.ceil(posts.length / postsPerPage)
+      Array.from({ length: numberOfPages }).forEach((_, index) => {
+        const isFirstPage = index === 0
+        const currentPage = index + 1
+        // skip firstPage because of index.js
+        if (isFirstPage) return
+        createPage({
+          path: `/page/${currentPage}`,
+          component: templates.postList,
+          context: {
+            limit: postsPerPage,
+            skip: index * postsPerPage,
+            currentPage: currentPage,
+            numberOfPages: numberOfPages,
+          },
+        })
+        //===================================================================
+        // Create author posts pages
       })
-//===================================================================
-    })
+      authors.forEach(author => {
+        createPage({
+          path: `/author/${slugify(author.name)}`,
+          component: templates.authorPosts,
+          context: {
+            authorName: author.name,
+            imageUrl: author.imageUrl,
+          },
+        })
+      })
     })
   })
 }
